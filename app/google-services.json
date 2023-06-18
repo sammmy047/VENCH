@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "228417693821",
+    "project_id": "myotp-b736f",
+    "storage_bucket": "myotp-b736f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228417693821:android:ae780aed3c43eb2e9ee914",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228417693821-nbbh56hvjeotqfjspb24ml8f8i2ufrqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMN_nQgVIiAoSv5BvisXDnIS--pJ3qnxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228417693821-nbbh56hvjeotqfjspb24ml8f8i2ufrqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
