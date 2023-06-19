@@ -71,7 +71,7 @@ Md5 md5;
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         if(user.isEmailVerified()) {
                                             Toast.makeText(LoginActivity.this, "Successfully Logged In ", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                                             startActivity(intent);
                                         }
                                         else {
