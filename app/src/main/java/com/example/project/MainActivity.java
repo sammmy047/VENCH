@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -167,7 +168,7 @@ FirebaseAuth mAuth;
                         Toast.makeText(MainActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
                    }
                 }*/
-            // remove this comment    });
+// remove this comment    });
 
 
 /*
@@ -192,6 +193,8 @@ public class MainActivity extends AppCompatActivity {
 
     Md5 md5;
 
+
+    boolean signupDisplayed=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -204,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
         signin = (Button) findViewById(R.id.siginbtn);
         signup = (Button) findViewById(R.id.signupbtn);
         mAuth = FirebaseAuth.getInstance();
+        EnableDisableButtons(View.INVISIBLE);
         md5 = new Md5(this);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -215,6 +219,14 @@ public class MainActivity extends AppCompatActivity {
                 String encpass = md5.getMd5(pass);
                 String repass = repassword.getText().toString();
                 String re_encpass = md5.getMd5(repass);
+                if(!signupDisplayed)
+                {
+                    TextView t=(TextView)findViewById(R.id.mainText);
+                    t.setText("SIGN UP");
+                    signupDisplayed=true;
+                    EnableDisableButtons(View.VISIBLE);
+                    return;
+                }
                 if (user.equals("") || encpass.equals("") || re_encpass.equals("") || usr_email.equals("") || phno.equals("")) {
                     Toast.makeText(MainActivity.this, "Enter all fields", Toast.LENGTH_SHORT).show();
                 } else if (!encpass.equals(re_encpass)) {
@@ -234,6 +246,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    void EnableDisableButtons(int s)
+    {
+        username.setVisibility(s);
+        password.setVisibility(s);
+        repassword.setVisibility(s);
+        Email.setVisibility(s);
+        phone.setVisibility(s);
+    }
 
     private void registerUser(String user, String usr_email, String phno, String encpass) {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -264,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intent);
                         }
-                });
+                    });
                 }
 
 
@@ -276,10 +296,10 @@ public class MainActivity extends AppCompatActivity {
                         password.requestFocus();
                     }catch(FirebaseAuthInvalidCredentialsException e){
                         Email.setError("Email is Invalid or in use ");
-                       Email.requestFocus();
+                        Email.requestFocus();
                     }catch (FirebaseAuthUserCollisionException e){
-                       username.setError("User is already registered with this email ");
-                       username.requestFocus();
+                        username.setError("User is already registered with this email ");
+                        username.requestFocus();
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }

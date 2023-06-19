@@ -4,116 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D52626"
+    android:backgroundTint="#8AFDCB"
     tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/saira_stencil_one"
         android:text="Forgot Password ?"
         android:textAllCaps="true"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.855" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="187dp"
         android:layout_height="68dp"
+        android:fontFamily="@font/saira_stencil_one"
         android:gravity="center"
         android:text="LOGIN"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072"
+        app:layout_constraintVertical_bias="0.119"
         tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/user"
         android:layout_width="370dp"
         android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint='User Name'
-        android:gravity='center'
         android:background="@drawable/round_back"
+        android:backgroundTint="#65E891"
+        android:backgroundTintMode="src_over"
+        android:ems="10"
+        android:fontFamily="@font/saira_stencil_one"
+        android:gravity='center'
+        android:hint='Email ...'
+        android:inputType="text"
         android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" >
-    </EditText>
+        app:layout_constraintVertical_bias="0.378"></EditText>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="370dp"
-        android:layout_height="80dp"
-        android:hint='Password'
+        android:layout_height="68dp"
+        android:hint='Password ...'
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.749"
+        app:layout_constraintVertical_bias="0.511"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pass"
-            android:layout_width="370dp"
-            android:layout_height="80dp"
+            android:layout_width="371dp"
+            android:layout_height="67dp"
             android:background="@drawable/round_back"
+            android:backgroundTint="#65E891"
+            android:backgroundTintMode="src_over"
+            android:fontFamily="@font/saira_stencil_one"
             android:gravity="center"
             android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textSize="14sp" />
+
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="151dp"
-        android:layout_height="37dp"
-        android:text="Email ID"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1D76FB"
+        android:fontFamily="@font/saira_stencil_one"
         android:gravity="center"
-        android:text="Login"
+        android:text="LOGIN"
+        android:textColorHighlight="#E11313"
+        android:textColorLink="#E47979"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.749" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
