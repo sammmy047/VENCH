@@ -193,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
 
     Md5 md5;
 
-
     boolean signupDisplayed=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -253,6 +252,8 @@ public class MainActivity extends AppCompatActivity {
         repassword.setVisibility(s);
         Email.setVisibility(s);
         phone.setVisibility(s);
+        findViewById(R.id.textInputLayout).setVisibility(s);
+        findViewById(R.id.textViewforRepass).setVisibility(s);
     }
 
     private void registerUser(String user, String usr_email, String phno, String encpass) {

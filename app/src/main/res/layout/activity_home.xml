@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8F3939"
+    android:backgroundTint="#1DC5A3"
+    android:backgroundTintMode="src_over"
     tools:context=".HomeActivity">
 
     <androidx.recyclerview.widget.RecyclerView

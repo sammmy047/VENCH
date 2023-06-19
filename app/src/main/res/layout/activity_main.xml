@@ -12,10 +12,11 @@
 
     <TextView
         android:id="@+id/mainText"
-        android:layout_width="185dp"
-        android:layout_height="63dp"
+        android:layout_width="311dp"
+        android:layout_height="61dp"
         android:fontFamily="@font/saira_stencil_one"
         android:text="VENCH"
+        android:textAlignment="center"
         android:textSize="48sp"
         app:autoSizeTextType="none"
         app:layout_constraintBottom_toBottomOf="parent"

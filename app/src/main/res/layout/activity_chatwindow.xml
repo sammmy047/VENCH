@@ -6,34 +6,36 @@
     android:layout_height="match_parent"
     android:background="@drawable/chatback"
     tools:context=".chatwindow">
+
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/ll1"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/recivername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chatting Application"
+            android:layout_margin="13dp"
+            android:fontFamily="@font/saira_stencil_one"
             android:gravity="center"
+            android:text="Chatting Application"
             android:textColor="@color/white"
-            android:textSize="19dp"
-            android:layout_margin="13dp"/>
+            android:textSize="19dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/msgadpter"
         android:layout_width="match_parent"
-        android:layout_height="502dp"
+        android:layout_height="591dp"
         android:layout_below="@+id/ll1"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="130dp"
-        android:layout_marginBottom="-2dp"
-        android:padding="13dp" />
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="71dp"
+        android:padding="1dp" />
 
     <LinearLayout
         android:id="@+id/ll2"
@@ -61,6 +63,7 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:background="@null"
+                android:fontFamily="@font/saira_stencil_one"
                 android:hint="Type The Messages..."
                 android:paddingStart="13.00dp"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -73,9 +76,9 @@
             android:layout_height="45dp"
             android:layout_marginTop="6.5dp"
             android:layout_marginEnd="6.5dp"
+            android:layout_weight="1"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="32dp"
-            android:layout_weight="1">
+            app:cardCornerRadius="32dp">
 
             <ImageView
                 android:layout_width="19.5dp"
