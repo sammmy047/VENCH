@@ -3,16 +3,17 @@ package com.example.project;
 
     public class msgModelclass {
         String message;
-        String senderid;
+        String senderid,toid;
         long timeStamp;
 
         public msgModelclass() {
         }
 
-        public msgModelclass(String message, String senderid, long timeStamp) {
+        public msgModelclass(String message, String senderid,String toid, long timeStamp) {
             this.message = message;
             this.senderid = senderid;
             this.timeStamp = timeStamp;
+            this.toid=toid;
         }
 
         public String getMessage() {
@@ -38,6 +39,15 @@ package com.example.project;
         public void setTimeStamp(long timeStamp) {
             this.timeStamp = timeStamp;
         }
+        public String getToid()
+        {
+            return toid;
+        }
+        public void setToid(String toid)
+        {
+            this.toid=toid;
+        }
+
     }
 
 

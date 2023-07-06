@@ -7,6 +7,15 @@
     android:background="@drawable/chatback"
     tools:context=".chatwindow">
 
+    <Button
+        android:id="@+id/back"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/saira_stencil_one"
+        android:insetLeft="0dp"
+        android:text="Back"
+        android:translationX="0dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,9 +26,11 @@
 
         <Button
             android:id="@+id/profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="My profile" />
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/saira_stencil_one"
+            android:text="My profile"
+            android:translationX="180px" />
 
         <TextView
             android:id="@+id/recivername"
@@ -66,8 +77,8 @@
 
             <EditText
                 android:id="@+id/textmsg"
-                android:layout_width="338dp"
-                android:layout_height="45dp"
+                android:layout_width="299dp"
+                android:layout_height="39dp"
                 android:layout_gravity="center"
                 android:background="@null"
                 android:fontFamily="@font/saira_stencil_one"

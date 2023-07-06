@@ -2,8 +2,7 @@ package com.example.project;
 
 public class UserDetails {
    String username="emp", email="emp",phone,pass;
-   public UserDetails()
-   {}
+
 public UserDetails(String users,String usr_email,String phno,String encpass)
 {
     this.username= users;

@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +36,7 @@ import java.util.Date;
             FirebaseAuth firebaseAuth;
 
             CardView sendbtn;
-            Button profile;
+            Button profile,back;
             EditText textmsg;
 
             String senderRoom,reciverRoom;
@@ -64,7 +65,7 @@ import java.util.Date;
                 mmessagesAdpter = new messageAdapter(chatwindow.this,messagesArrayList);
                 messageAdpter.setAdapter(mmessagesAdpter);
 
-
+                back=findViewById(R.id.back);
 
                 reciverNName.setText(""+reciverName);
 
@@ -78,7 +79,13 @@ import java.util.Date;
                 //DatabaseReference reference = database.getReference().child("Registered Users").child(firebaseAuth.getUid());
                 DatabaseReference  chatreference = database.getReference().child("chats").child(senderRoom).child("messages");
 
-
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_BACK));
+                        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP,KeyEvent.KEYCODE_BACK));
+                    }
+                });
                 chatreference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -113,24 +120,16 @@ import java.util.Date;
                         }
                         textmsg.setText("");
                         Date date = new Date();
-                        msgModelclass messagess = new msgModelclass(message,SenderUID,date.getTime());
+                        msgModelclass messages = new msgModelclass(message,SenderUID,"shashanks_cs20.rvitm+ven@rvei.edu.in",date.getTime());
 
                         database=FirebaseDatabase.getInstance();
                         database.getReference().child("chats")
                                 .child(senderRoom)
                                 .child("messages")
-                                .push().setValue(messagess).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                .push().setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        database.getReference().child("chats")
-                                                .child(reciverRoom)
-                                                .child("messages")
-                                                .push().setValue(messagess).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
 
-                                                    }
-                                                });
                                     }
                                 });
                     }
