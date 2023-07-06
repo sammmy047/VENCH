@@ -101,9 +101,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
                 Intent t=new Intent(MapsActivity.this,chatwindow.class);
-                t.putExtra("name","Shop 1");
-                t.putExtra("email","ns");
-                startActivity(t);
+                Bundle b=new Bundle();
+                b.putString("username","Shop_1".concat(",").concat("shashanks_cs20.rvitm+ven@rvei.edu.in"));
+                t.putExtras(b); startActivity(t);
                 Toast.makeText(getBaseContext(),marker.getTitle(), Toast.LENGTH_LONG).show();
                 return false;
             }

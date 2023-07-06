@@ -7,17 +7,20 @@
         android:id="@+id/recivertextset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-
         android:layout_alignParentTop="true"
+
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="1.6dp"
-        android:layout_marginTop="6.5dp"
-        android:layout_marginEnd="6.5dp"
-        android:layout_marginBottom="6.5dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="642dp"
         android:background="@drawable/reciver_shape"
-        android:text="sam"
+        android:fontFamily="@font/saira_stencil_one"
+        android:paddingTop="30dp"
+        android:text="Text inside"
         android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold" />
 </RelativeLayout>

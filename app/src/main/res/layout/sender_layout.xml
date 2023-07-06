@@ -17,7 +17,7 @@
             android:background="@drawable/sender_shape"
             android:fontFamily="@font/saira_stencil_one"
             android:padding="15dp"
-            android:text="samyak"
+            android:text="Text inside"
             android:textAlignment="textEnd"
             android:textColor="@color/black"
             android:textSize="20sp"

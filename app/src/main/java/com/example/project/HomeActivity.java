@@ -75,7 +75,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        DatabaseReference reference2=database.getReference().child("chats").child("xxyKQrDCerU8ZKgpF5zIyoOepzI3ns").child("messages");
+        DatabaseReference reference2=database.getReference().child("chats");
         reference2.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SuspiciousIndentation")
             @Override

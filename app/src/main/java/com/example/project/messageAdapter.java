@@ -33,8 +33,8 @@ import java.util.ArrayList;
                 View view = LayoutInflater.from(context).inflate(R.layout.sender_layout, parent, false);
                 return new senderVierwHolder(view);
             }else {
-                View view = LayoutInflater.from(context).inflate(R.layout.reciever_layout, parent, false);
-                return new reciverViewHolder(view);
+                View view = LayoutInflater.from(context).inflate(R.layout.sender_layout, parent, false);
+                return new senderVierwHolder(view);
             }
 
         }

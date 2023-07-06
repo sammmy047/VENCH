@@ -50,9 +50,9 @@ import java.util.Date;
                 setContentView(R.layout.activity_chatwindow);
                 database = FirebaseDatabase.getInstance();
                 firebaseAuth = FirebaseAuth.getInstance();
-
-                reciverName = getIntent().getStringExtra("username");
-                reciverEmail = getIntent().getStringExtra("email");
+                String[] data=getIntent().getStringExtra("username").split(",");
+                reciverName = data[0];
+                reciverEmail = data[1];
 
                 messagesArrayList = new ArrayList<>();
                 sendbtn = findViewById(R.id.sendbtnn);
@@ -79,29 +79,35 @@ import java.util.Date;
 
 
                 //DatabaseReference reference = database.getReference().child("Registered Users").child(firebaseAuth.getUid());
-                DatabaseReference  chatreference = database.getReference().child("chats").child(senderRoom).child("messages");
+                try {
+                    DatabaseReference chatreference = database.getReference().child("chats");
+                    chatreference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            messagesArrayList.clear();
+                            for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                                msgModelclass messages = dataSnapshot.getValue(msgModelclass.class);
+                                messagesArrayList.add(messages);
+                            }
+                            mmessagesAdpter.notifyDataSetChanged();
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                }
+                catch (Exception e)
+                {
+
+                }
                 back.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_BACK));
                         dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP,KeyEvent.KEYCODE_BACK));
-                    }
-                });
-                chatreference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        messagesArrayList.clear();
-                        for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                            msgModelclass messages = dataSnapshot.getValue(msgModelclass.class);
-                            messagesArrayList.add(messages);
-                        }
-                        mmessagesAdpter.notifyDataSetChanged();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
 
@@ -126,8 +132,6 @@ import java.util.Date;
 
                         database=FirebaseDatabase.getInstance();
                         database.getReference().child("chats")
-                                .child(senderRoom)
-                                .child("messages")
                                 .push().setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

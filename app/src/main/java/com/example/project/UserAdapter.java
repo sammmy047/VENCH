@@ -46,8 +46,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder>{
             public void onClick(View view) {
                 Intent intent = new Intent(homeActivity, chatwindow.class);
                 Bundle b=new Bundle();
-                b.putString("username",userDetails.getUsername());
-                b.putString("email","emaiul");
+                b.putString("username",userDetails.getUsername().concat(",").concat(userDetails.getEmail()));
                 intent.putExtras(b);
                 homeActivity.startActivity(intent);
             }
