@@ -12,8 +12,9 @@
         android:paddingTop="20dp">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="48dp"
+            android:id="@+id/img"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
             android:layout_gravity="center"
             android:src="@drawable/person_image"
             app:srcCompat="@drawable/man" />
@@ -29,14 +30,16 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/saira_stencil_one"
                 android:text="User Name"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/userEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/saira_stencil_one"
-                android:text="User Email" />
+                android:text="User Email"
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

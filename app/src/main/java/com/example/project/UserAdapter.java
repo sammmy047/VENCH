@@ -1,9 +1,11 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,7 +26,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder>{
         this.homeActivity=homeActivity;
         this.usersArrayList=usersArrayList;
         this.messages=messages;
-        }
+    }
 
     @NonNull
     @Override
@@ -36,14 +38,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder>{
     @Override
     public void onBindViewHolder(@NonNull UserAdapter.viewholder holder, int position) {
        UserDetails userDetails = usersArrayList.get(position);
-       holder.name.setText(userDetails.username);
-       holder.email.setText(userDetails.email);
+       holder.name.setText(userDetails.getUsername());
+       holder.email.setText(userDetails.getEmail());
+       holder.img.setImageResource(R.drawable.man);
        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(homeActivity, chatwindow.class);
-                intent.putExtra("name",userDetails.getUsername());
-                intent.putExtra("email",userDetails.getEmail());
+                Bundle b=new Bundle();
+                b.putString("username",userDetails.getUsername());
+                b.putString("email","emaiul");
+                intent.putExtras(b);
                 homeActivity.startActivity(intent);
             }
         });
@@ -56,10 +61,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder>{
 
     public class viewholder extends RecyclerView.ViewHolder{
         private TextView name,email;
+        ImageView img;
         public viewholder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.userName);
             email = itemView.findViewById(R.id.userEmail);
+            img=itemView.findViewById(R.id.img);
         }
     }
 }

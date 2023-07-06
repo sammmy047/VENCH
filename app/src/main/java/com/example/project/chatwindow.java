@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,7 +51,7 @@ import java.util.Date;
                 database = FirebaseDatabase.getInstance();
                 firebaseAuth = FirebaseAuth.getInstance();
 
-                reciverName = getIntent().getStringExtra("name");
+                reciverName = getIntent().getStringExtra("username");
                 reciverEmail = getIntent().getStringExtra("email");
 
                 messagesArrayList = new ArrayList<>();
@@ -74,6 +75,7 @@ import java.util.Date;
                 senderRoom = SenderUID+reciverEmail;
                 reciverRoom = reciverEmail+SenderUID;
 
+                FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
 
                 //DatabaseReference reference = database.getReference().child("Registered Users").child(firebaseAuth.getUid());
@@ -120,7 +122,7 @@ import java.util.Date;
                         }
                         textmsg.setText("");
                         Date date = new Date();
-                        msgModelclass messages = new msgModelclass(message,SenderUID,"shashanks_cs20.rvitm+ven@rvei.edu.in",date.getTime());
+                        msgModelclass messages = new msgModelclass(message,currentUser.getEmail(),reciverEmail,date.getTime());
 
                         database=FirebaseDatabase.getInstance();
                         database.getReference().child("chats")

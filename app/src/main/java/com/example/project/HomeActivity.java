@@ -55,9 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         usersArrayList = new ArrayList<>();
         messages= new ArrayList<>();
         mainUserRecyclerView = findViewById(R.id.recycler);
-        mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdapter(HomeActivity.this,usersArrayList,messages);
-        mainUserRecyclerView.setAdapter(adapter);
+
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
@@ -70,9 +68,7 @@ public class HomeActivity extends AppCompatActivity {
                     UserDetails users = dataSnapshot.getValue(UserDetails.class);
                     usersArrayList.add(users);
                 }
-                adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -89,6 +85,9 @@ public class HomeActivity extends AppCompatActivity {
                     msgModelclass mess = dataSnapshot.getValue(msgModelclass.class);
                     String curr=currentUser.getEmail();
                     if(mess.toid.equals(curr))
+                    {
+                        Toast.makeText(HomeActivity.this, "hello", Toast.LENGTH_SHORT).show();
+                    }
                         messages.add(mess);
                 }
                 int i=0;
@@ -97,7 +96,7 @@ public class HomeActivity extends AppCompatActivity {
                     for (msgModelclass m:
                             messages)
                     {
-                        if(usersArrayList.get(i).email==m.toid)
+                        if(usersArrayList.get(i).email.equals(m.senderid))
                         {
                             f=true;
                             break;
@@ -109,6 +108,10 @@ public class HomeActivity extends AppCompatActivity {
                     }
                     i+=1;
                 }
+
+                mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                adapter = new UserAdapter(HomeActivity.this,usersArrayList,messages);
+                mainUserRecyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
             @Override
@@ -116,7 +119,6 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
 
 
 
