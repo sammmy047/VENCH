@@ -15,10 +15,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6.5dp"
             android:background="@drawable/sender_shape"
+            android:fontFamily="@font/saira_stencil_one"
             android:padding="15dp"
             android:text="samyak"
             android:textAlignment="textEnd"
             android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 

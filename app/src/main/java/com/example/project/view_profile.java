@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,8 +46,8 @@ FirebaseAuth auth;
             @Override
             public void onClick(View view) {
                 Toast.makeText(view_profile.this,"Going Back To Home Page",Toast.LENGTH_SHORT).show();
-                Intent intent= new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
+                dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
             }
         });
     }
@@ -56,7 +57,6 @@ FirebaseAuth auth;
 public void getdata(@NonNull FirebaseUser firebaseUser) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
         String uid = firebaseUser.getUid();
-        Toast.makeText(view_profile.this,uid,Toast.LENGTH_LONG).show();
       databaseReference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
           @Override
           public void onDataChange(@NonNull DataSnapshot snapshot) {

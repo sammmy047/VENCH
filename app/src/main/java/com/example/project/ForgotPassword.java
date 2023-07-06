@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ForgotPassword extends AppCompatActivity {
+public class    ForgotPassword extends AppCompatActivity {
 EditText password,repassword,username;
 Md5 md5;
 Button reset;

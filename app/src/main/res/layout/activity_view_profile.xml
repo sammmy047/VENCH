@@ -19,14 +19,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066"
-        app:srcCompat="@drawable/no_profile_pic" />
+        app:srcCompat="@drawable/man" />
 
 
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="8dp"
-        android:background="@color/black"
+        android:background="#F7FF07"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
 
         <EditText
             android:id="@+id/username"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="315dp"
             android:layout_height="53dp"
             android:layout_alignParentStart="true"
@@ -55,9 +56,13 @@
             android:layout_marginTop="33dp"
             android:layout_marginEnd="22dp"
             android:layout_marginBottom="404dp"
+            android:editable="false"
+
+            android:fontFamily="@font/saira_stencil_one"
             android:gravity="center"
             android:hint="User Name"
-
+            android:textColorHighlight="#C86CEF"
+            android:textColorHint="#D229F8"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,23 +73,28 @@
 
         <EditText
             android:id="@+id/email_id"
-            android:layout_width="315dp"
-            android:layout_height="53dp"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="73dp"
-            android:layout_marginTop="129dp"
-            android:layout_marginEnd="23dp"
-            android:layout_marginBottom="306dp"
-            android:textSize="20dp"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="118dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="297dp"
+            android:editable="false"
+            android:fontFamily="@font/saira_stencil_one"
             android:gravity="center"
             android:hint="Email Id"
-            />
+            android:textColor="#382AFF"
+            android:textColorHint="#0D58EF"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/phone_num"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="310dp"
             android:layout_height="53dp"
             android:layout_alignParentStart="true"
@@ -95,37 +105,42 @@
             android:layout_marginTop="216dp"
             android:layout_marginEnd="22dp"
             android:layout_marginBottom="219dp"
+            android:editable="false"
+            android:fontFamily="@font/saira_stencil_one"
             android:gravity="center"
             android:hint="Phone Number"
+            android:shadowColor="#FFAFAF"
+            android:textColor="#EF0E0E"
+            android:textColorHint="#F49696"
             android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="51dp"
-            android:layout_height="53dp"
+            android:layout_width="63dp"
+            android:layout_height="57dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="21dp"
+            android:layout_marginStart="9dp"
             android:layout_marginTop="33dp"
             android:layout_marginEnd="337dp"
-            android:layout_marginBottom="405dp"
-            app:srcCompat="@drawable/ic_profile" />
+            android:layout_marginBottom="400dp"
+            app:srcCompat="@drawable/idcard" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="60dp"
-            android:layout_height="53dp"
+            android:layout_width="77dp"
+            android:layout_height="56dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="17dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="132dp"
             android:layout_marginEnd="332dp"
-            android:layout_marginBottom="304dp"
-            app:srcCompat="@drawable/ic_email" />
+            android:layout_marginBottom="302dp"
+            app:srcCompat="@drawable/mail" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -139,7 +154,7 @@
             android:layout_marginTop="214dp"
             android:layout_marginEnd="332dp"
             android:layout_marginBottom="210dp"
-            app:srcCompat="@drawable/ic_mobile" />
+            app:srcCompat="@drawable/telephone" />
 
         <Button
             android:id="@+id/backbutton"
@@ -154,8 +169,10 @@
             android:layout_marginEnd="127dp"
             android:layout_marginBottom="39dp"
             android:backgroundTint="#1D76FB"
+            android:fontFamily="@font/saira_stencil_one"
             android:gravity="center"
             android:text="Back"
+            android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck" />
     </RelativeLayout>
 

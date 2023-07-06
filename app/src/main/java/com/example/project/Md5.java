@@ -10,6 +10,9 @@ public class Md5 {
 
     }
 
+    public Md5(HomeScreen homeScreen) {
+    }
+
     public static String getMd5(String input)
     {
         try {
