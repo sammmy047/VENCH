@@ -60,12 +60,11 @@ public void getdata(@NonNull FirebaseUser firebaseUser) {
       databaseReference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
           @Override
           public void onDataChange(@NonNull DataSnapshot snapshot) {
-              UserDetails readuser = snapshot.getValue(UserDetails.class);
-
-              if (readuser != null) {
-                  String uname = readuser.username;
+              UserDetails readUser = snapshot.getValue(UserDetails.class);
+              if (readUser != null) {
+                  String uname = readUser.username;
                   username.setText(uname);
-                  String phno = readuser.phone;
+                  String phno = readUser.phone;
                   phone.setText(phno);
 
 

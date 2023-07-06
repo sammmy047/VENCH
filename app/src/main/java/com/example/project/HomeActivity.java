@@ -58,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new UserAdapter(HomeActivity.this,usersArrayList,messages);
         mainUserRecyclerView.setAdapter(adapter);
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -68,6 +70,7 @@ public class HomeActivity extends AppCompatActivity {
                     UserDetails users = dataSnapshot.getValue(UserDetails.class);
                     usersArrayList.add(users);
                 }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -75,12 +78,9 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
-
-        reference=database.getReference().child("chats").child("xxyKQrDCerU8ZKgpF5zIyoOepzI3ns").child("messages");
-        reference.addValueEventListener(new ValueEventListener() {
+        DatabaseReference reference2=database.getReference().child("chats").child("xxyKQrDCerU8ZKgpF5zIyoOepzI3ns").child("messages");
+        reference2.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SuspiciousIndentation")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -89,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
                     msgModelclass mess = dataSnapshot.getValue(msgModelclass.class);
                     String curr=currentUser.getEmail();
                     if(mess.toid.equals(curr))
-                    messages.add(mess);
+                        messages.add(mess);
                 }
                 int i=0;
                 while (i<usersArrayList.size()){
@@ -111,13 +111,12 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 adapter.notifyDataSetChanged();
             }
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
 
 
 
