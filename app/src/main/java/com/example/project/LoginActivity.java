@@ -52,7 +52,7 @@ Md5 md5;
                     Toast.makeText(LoginActivity.this,"Enter the empty Fields",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    mAuth.signInWithEmailAndPassword(email_usr, encpass )
+                    mAuth.signInWithEmailAndPassword(email_usr,encpass)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                                 @Override
@@ -63,8 +63,7 @@ Md5 md5;
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         if(user.isEmailVerified()) {
                                             Toast.makeText(LoginActivity.this, "Successfully Logged In ", Toast.LENGTH_SHORT).show();
-
-                                            Intent intent = new Intent(getApplicationContext(), email_usr.contains("+ven") ? HomeActivity.class : MapsActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                                             startActivity(intent);
                                         }
                                         else {
@@ -82,6 +81,31 @@ Md5 md5;
                                     }
                                 }
                             });
+                    /*databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //check if username exists
+                            if(snapshot.hasChild(user)){
+                                // user exists in firebase we authenticate the password
+                                final String getpass = snapshot.child(user).child("Password").getValue(String.class);
+                                if(getpass.equals(encpass)){
+                                    Toast.makeText(LoginActivity.this,"Successfully Logged In ",Toast.LENGTH_SHORT).show();
+                                    Intent intent  = new Intent(getApplicationContext(), OTP.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Toast.makeText(LoginActivity.this,"Invalid Password ",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+                    });*/
 
                 }
             }

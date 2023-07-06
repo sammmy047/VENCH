@@ -1,6 +1,5 @@
 package com.example.project;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -41,7 +40,7 @@ FirebaseAuth auth;
 
         assert firebaseUser != null;
         getdata(firebaseUser);
-       email_id.setText(firebaseUser.getEmail());
+        email_id.setText(firebaseUser.getEmail());
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

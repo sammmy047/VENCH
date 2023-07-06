@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,10 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder>{
     Context homeActivity;//change this if giving error
