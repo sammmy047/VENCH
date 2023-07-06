@@ -1,18 +1,15 @@
 package com.example.project;
 
-import static android.content.ContentValues.TAG;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,11 +21,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 /*public class MainActivity extends AppCompatActivity {
   EditText username,password,repassword,Email,phone;
@@ -218,11 +212,10 @@ public class MainActivity extends AppCompatActivity {
                 String encpass = md5.getMd5(pass);
                 String repass = repassword.getText().toString();
                 String re_encpass = md5.getMd5(repass);
-                if(!signupDisplayed)
-                {
-                    TextView t=(TextView)findViewById(R.id.mainText);
+                if(!signupDisplayed) {
+                    TextView t = (TextView) findViewById(R.id.mainText);
                     t.setText("SIGN UP");
-                    signupDisplayed=true;
+                    signupDisplayed = true;
                     EnableDisableButtons(View.VISIBLE);
                     return;
                 }
@@ -245,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void EnableDisableButtons(int s)
+   void EnableDisableButtons(int s)
     {
         username.setVisibility(s);
         password.setVisibility(s);
@@ -266,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
                     UserDetails writeDetails = new UserDetails(user,usr_email,phno,encpass);
                     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users");
+                    assert firebaseUser != null;
                     databaseReference.child(firebaseUser.getUid()).setValue(writeDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

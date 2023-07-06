@@ -5,7 +5,9 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_profile">
+    tools:context=".view_profile"
+    android:background="#D52626"
+    android:backgroundTint="#8AFDCB">
 
     <ImageView
         android:id="@+id/profilepic"
@@ -151,6 +153,7 @@
             android:layout_marginTop="412dp"
             android:layout_marginEnd="127dp"
             android:layout_marginBottom="39dp"
+            android:backgroundTint="#1D76FB"
             android:gravity="center"
             android:text="Back"
             tools:ignore="TouchTargetSizeCheck" />

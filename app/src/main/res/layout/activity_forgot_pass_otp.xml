@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".forgotPassOTP">
+    tools:context=".forgotPassOTP"
+    android:background="#D52626"
+    android:backgroundTint="#8AFDCB">
 
     <!--EditText
         android:id="@+id/phone1"
@@ -27,15 +29,15 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:hint="Enter your username"
+        android:hint="Enter your Email"
         android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <Button
         android:id="@+id/BtnGetOtp"
@@ -44,14 +46,44 @@
         android:layout_below="@id/uname1"
         android:layout_margin="10dp"
         android:layout_marginStart="8dp"
-        android:text="Get OTP"
+        android:backgroundTint="#1D76FB"
+        android:text=" Reset Password"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.711" />
 
-    <EditText
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="394dp"
+        android:layout_height="69dp"
+        android:fontFamily="@font/saira_stencil_one"
+
+        android:text=" Forgot Password"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="113dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/saira_stencil_one"
+        android:text="Email :"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325" />
+
+    <!--<EditText
         android:id="@+id/otp"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -82,5 +114,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.91" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

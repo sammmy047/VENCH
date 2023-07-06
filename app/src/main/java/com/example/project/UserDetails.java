@@ -1,7 +1,7 @@
 package com.example.project;
 
 public class UserDetails {
-   String username="uname", email="email",phone,pass;
+   String username="emp", email="emp",phone,pass;
    public UserDetails()
    {}
 public UserDetails(String users,String usr_email,String phno,String encpass)
@@ -21,7 +21,7 @@ public UserDetails(String users,String usr_email,String phno,String encpass)
     }
 
     public String getEmail() {
-        return "email";
+        return email;
     }
 
     public void setEmail(String email) {
@@ -39,6 +39,7 @@ public UserDetails(String users,String usr_email,String phno,String encpass)
     public String getPass() {
         return pass;
     }
+
 
     public void setPass(String pass) {
         this.pass = pass;

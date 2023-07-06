@@ -1,8 +1,5 @@
 package com.example.project;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,24 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
-import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import org.jetbrains.annotations.NotNull;
-
-import java.util.concurrent.TimeUnit;
 
 public class forgotPassOTP extends AppCompatActivity {
     EditText username, otp, phone,Email;
@@ -36,9 +24,10 @@ public class forgotPassOTP extends AppCompatActivity {
     Button btnsendemail, btnverify,btngetotp;
     String verificationId;
     FirebaseAuth mAuth;
+    UserDetails userDetails;
 
      DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myotp-b736f-default-rtdb.firebaseio.com/");
-     @Override
+    /* @Override
       protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
           setContentView(R.layout.activity_forgot_pass_otp);
@@ -52,14 +41,13 @@ public class forgotPassOTP extends AppCompatActivity {
               @Override
               public void onClick(View view) {
                   String user = username.getText().toString();
-                  FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
                   /*String phno = phone.getText().toString();*/
-                databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+              /*  databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.hasChild(user))
-                        {
+                        {   Toast.makeText(forgotPassOTP.this,user,Toast.LENGTH_LONG).show();
                             // user exists in firebase we authenticate the password
                             final String number = snapshot.child(user).child("Phone_Number").getValue(String.class);
                             //if (phno.equals(number)) {
@@ -148,8 +136,8 @@ public class forgotPassOTP extends AppCompatActivity {
             Toast.makeText(forgotPassOTP.this,"OTP sent successfully",Toast.LENGTH_SHORT).show();
             btnverify.setEnabled(true);
         }
-    };
-    /*@Override
+    };*/
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_pass_otp);
@@ -186,5 +174,5 @@ public class forgotPassOTP extends AppCompatActivity {
         });
 
     }
-}*/
-              }
+}
+             // }

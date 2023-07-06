@@ -1,16 +1,15 @@
 package com.example.project;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,7 +45,7 @@ FirebaseAuth auth;
             @Override
             public void onClick(View view) {
                 Toast.makeText(view_profile.this,"Going Back To Home Page",Toast.LENGTH_SHORT).show();
-                Intent intent= new Intent(getApplicationContext(), HomeActivity.class);
+                Intent intent= new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });

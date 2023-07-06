@@ -1,16 +1,18 @@
 package com.example.project;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,6 +35,7 @@ import java.util.Date;
             FirebaseAuth firebaseAuth;
 
             CardView sendbtn;
+            Button profile;
             EditText textmsg;
 
             String senderRoom,reciverRoom;
@@ -50,11 +53,10 @@ import java.util.Date;
                 reciverEmail = getIntent().getStringExtra("email");
 
                 messagesArrayList = new ArrayList<>();
-
                 sendbtn = findViewById(R.id.sendbtnn);
                 textmsg = findViewById(R.id.textmsg);
                 reciverNName = findViewById(R.id.recivername);
-
+                profile = findViewById(R.id.profile);
                 messageAdpter = findViewById(R.id.msgadpter);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
                 linearLayoutManager.setStackFromEnd(true);
@@ -94,7 +96,13 @@ import java.util.Date;
                     }
                 });
 
-
+               profile.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+                       Intent intent = new Intent(chatwindow.this,view_profile.class);
+                       startActivity(intent);
+                   }
+               });
                 sendbtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
