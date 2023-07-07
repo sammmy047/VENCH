@@ -5,7 +5,7 @@ package com.example.project;
         String message;
         String senderid,toid;
         long timeStamp;
-
+        public boolean sender=false;
         public msgModelclass() {
         }
 

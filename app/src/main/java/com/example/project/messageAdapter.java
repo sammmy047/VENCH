@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import java.util.ArrayList;
 
     public class messageAdapter extends RecyclerView.Adapter {
@@ -33,8 +31,8 @@ import java.util.ArrayList;
                 View view = LayoutInflater.from(context).inflate(R.layout.sender_layout, parent, false);
                 return new senderVierwHolder(view);
             }else {
-                View view = LayoutInflater.from(context).inflate(R.layout.sender_layout, parent, false);
-                return new senderVierwHolder(view);
+                View view = LayoutInflater.from(context).inflate(R.layout.reciever_layout, parent, false);
+                return new reciverViewHolder(view);
             }
 
         }
@@ -82,7 +80,8 @@ import java.util.ArrayList;
         @Override
         public int getItemViewType(int position) {
             msgModelclass messages = messagesAdpterArrayList.get(position);
-            if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())) {
+            //FirebaseAuth.getInstance().getCurrentUser().getEmail().equals(messages.getSenderid())
+            if (messages.sender==true) {
                 return ITEM_SEND;
             } else {
                 return ITEM_RECIVE;
@@ -95,7 +94,7 @@ import java.util.ArrayList;
             public senderVierwHolder(@NonNull View itemView) {
                 super(itemView);
 
-                msgtxt = itemView.findViewById(R.id.msgsendertyp);
+                msgtxt = itemView.findViewById(R.id.recivertextset);
 
             }
         }

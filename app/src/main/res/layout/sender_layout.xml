@@ -7,10 +7,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="10dp">
+        android:paddingBottom="10dp"
+        android:translationX="265dp">
 
         <TextView
-            android:id="@+id/msgsendertyp"
+            android:id="@+id/recivertextset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6.5dp"

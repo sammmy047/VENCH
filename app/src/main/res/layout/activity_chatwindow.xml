@@ -41,17 +41,17 @@
             android:gravity="center"
             android:text="Chatting Application"
             android:textColor="@color/white"
-            android:textSize="19dp" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/msgadpter"
         android:layout_width="match_parent"
-        android:layout_height="540dp"
+        android:layout_height="569dp"
         android:layout_below="@+id/ll1"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="-24dp"
         android:layout_marginBottom="71dp"
         android:padding="13dp" />
 

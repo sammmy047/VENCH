@@ -87,7 +87,13 @@ import java.util.Date;
                             messagesArrayList.clear();
                             for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                                 msgModelclass messages = dataSnapshot.getValue(msgModelclass.class);
+                                if(messages.senderid.equals(reciverEmail))
                                 messagesArrayList.add(messages);
+                                else if(messages.senderid.equals(currentUser.getEmail()))
+                                {
+                                    messages.sender=true;
+                                    messagesArrayList.add(messages);
+                                }
                             }
                             mmessagesAdpter.notifyDataSetChanged();
                         }
