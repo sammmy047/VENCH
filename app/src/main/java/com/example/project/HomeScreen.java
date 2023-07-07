@@ -18,7 +18,8 @@ package com.example.project;
 
 public class HomeScreen extends AppCompatActivity {
 
-    TextView name, own1, own2;
+    TextView  own1, own2;
+    ImageView logo;
     Animation topAnim, bottomAnim;
 
     @Override
@@ -26,7 +27,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        name = findViewById(R.id.logonameimg);
+        logo = findViewById(R.id.imageView);
         own1 = findViewById(R.id.ownone);
         own2 = findViewById(R.id.owntwo);
 
@@ -34,7 +35,7 @@ public class HomeScreen extends AppCompatActivity {
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
 
-        name.setAnimation(bottomAnim);
+        logo.setAnimation(bottomAnim);
         own1.setAnimation(bottomAnim);
         own2.setAnimation(bottomAnim);
         StartHomeScreen();
