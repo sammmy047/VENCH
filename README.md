@@ -17,8 +17,24 @@ In the below figure  we observe the contents within the registered users where t
 
 Main Page :
 
+This figure represents the main page of the mobile application.
+
 ![image](https://github.com/sammmy047/VENCH/assets/76446088/d698c251-82c9-4c1e-a0a8-27e8240b3712)
 
 Sign Up Page :
 
+In the below figure we observe the sign up page of the app with various required details like the user name, e-mail address, phone number and password.
+
 ![image](https://github.com/sammmy047/VENCH/assets/76446088/adbe3349-3270-40f0-a726-5133c3f634e3)
+
+Forgot Password :
+
+Below figure represents the forgot password page where the user can reset the password by entering the e-mail associated with the account. 
+
+![image](https://github.com/sammmy047/VENCH/assets/76446088/bcd75f16-4160-4d74-9d06-08554748ed21)
+
+User map view :
+
+Figure given below represent the map view for the user app .There are three shops nearby based on the current gps location of the user, the user can click on the icon to be directed to the chat page to chat with the specific vendor.
+
+![image](https://github.com/sammmy047/VENCH/assets/76446088/f0afa143-5588-44ea-ab6b-0db4aff9607b)
