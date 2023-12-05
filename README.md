@@ -18,3 +18,7 @@ In the below figure  we observe the contents within the registered users where t
 Main Page :
 
 ![image](https://github.com/sammmy047/VENCH/assets/76446088/d698c251-82c9-4c1e-a0a8-27e8240b3712)
+
+Sign Up Page :
+
+![image](https://github.com/sammmy047/VENCH/assets/76446088/adbe3349-3270-40f0-a726-5133c3f634e3)
