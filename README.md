@@ -38,3 +38,11 @@ User map view :
 Figure given below represent the map view for the user app .There are three shops nearby based on the current gps location of the user, the user can click on the icon to be directed to the chat page to chat with the specific vendor.
 
 ![image](https://github.com/sammmy047/VENCH/assets/76446088/f0afa143-5588-44ea-ab6b-0db4aff9607b)
+
+The Chat page :
+
+The below figure represents the chat page when the user has clicked on the icon in the map page. The
+User can send a message through the bottom text field, see the profile using my profile button and go back to the map view using the back button.
+
+![image](https://github.com/sammmy047/VENCH/assets/76446088/57acd896-a311-44f4-89b7-afb8693e49f6)
+
