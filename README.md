@@ -42,7 +42,7 @@ Figure given below represent the map view for the user app .There are three shop
 The Chat page :
 
 The below figure represents the chat page when the user has clicked on the icon in the map page. The
-User can send a message through the bottom text field, see the profile using my profile button and go back to the map view using the back button. This
+User can send a message through the bottom text field, see the profile using my profile button and go back to the map view using the back button. This allows users 
 
 ![image](https://github.com/sammmy047/VENCH/assets/76446088/57acd896-a311-44f4-89b7-afb8693e49f6)
 
